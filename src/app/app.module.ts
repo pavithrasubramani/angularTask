@@ -1,16 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { TicketsComponent } from './tickets/tickets.component';
+import { HomeComponent } from './home/home.component';
+import { TicketlistComponent } from './ticketlist/ticketlist.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    TicketsComponent,
+    HomeComponent,
+    TicketlistComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+     
+     {
+       path:'login',
+       component:LoginComponent,       
+     },
+     {
+      path:'home',
+      component:HomeComponent
+     },
+     {
+       path:'tickets',
+       component:TicketsComponent
+      },
+      {
+        path:'ticketlist',
+        component:TicketlistComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

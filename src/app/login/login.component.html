@@ -1,0 +1,16 @@
+
+<div class="login">
+  <div class="login-header">
+    
+  </div>
+  <div class="login-form">
+    <h3>Username:</h3>
+    <input type="text" placeholder="Username" id="username" #userId/><br>
+    <h3>Password:</h3>
+    <input type="password" placeholder="Password" id="pass" #userpass />
+    <br>
+    <input type="button" value="Login" class="login-button" (click)="onSubmit(userId.value,userpass.value)"/>
+    
+    
+  </div>
+</div>
