@@ -8,11 +8,16 @@ import {Router} from '@angular/router';
 })
 export class TicketsComponent implements OnInit {
 
+  final:any;
   constructor(private router: Router) { }
 onCreate(){
   this.router.navigate(['/ticketlist'])
+
 }
   ngOnInit() {
+    var store=localStorage.getItem('key');
+    debugger;
+    this.final=JSON.parse(store);
   }
 
 }

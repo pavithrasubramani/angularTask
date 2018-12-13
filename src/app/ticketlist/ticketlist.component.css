@@ -44,11 +44,3 @@ label {
     
 
 }
-.css {
-    counter-reset: serial-number;  
-  }
-  
-  .css td:first-child:before {
-    counter-increment: serial-number; 
-    content: "S.NO"counter(serial-number);  
-  }

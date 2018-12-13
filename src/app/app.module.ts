@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { HomeComponent } from './home/home.component';
 import { TicketlistComponent } from './ticketlist/ticketlist.component';
+import { AuthGuard } from './auth.guard';
+
 
 
 
@@ -17,6 +19,7 @@ import { TicketlistComponent } from './ticketlist/ticketlist.component';
     TicketsComponent,
     HomeComponent,
     TicketlistComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,17 +32,22 @@ import { TicketlistComponent } from './ticketlist/ticketlist.component';
      },
      {
       path:'home',
-      component:HomeComponent
+      component:HomeComponent,
+      canActivate: [AuthGuard]
      },
      {
        path:'tickets',
-       component:TicketsComponent
+       component:TicketsComponent,
+       canActivate: [AuthGuard]
       },
       {
         path:'ticketlist',
-        component:TicketlistComponent
+        component:TicketlistComponent,
+        canActivate: [AuthGuard]
       }
-    ])
+      
+    ]),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

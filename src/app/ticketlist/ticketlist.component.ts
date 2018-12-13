@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Insert} from '../insert';
 
 @Component({
   selector: 'app-ticketlist',
@@ -7,13 +8,32 @@ import {Router} from '@angular/router';
   styleUrls: ['./ticketlist.component.css']
 })
 export class TicketlistComponent implements OnInit {
-
+  private insert: Insert[]=[];
   constructor(private router: Router) { }
-  onClick(){
-    this.router.navigate(['/tickets'])
+  onClick(name,comment){
+          debugger;
+         this.insert.push(new Insert(name,comment));
+         localStorage.setItem('key',JSON.stringify(this.insert));
+         
+         this.router.navigate(['/tickets'])
+         }
+         
+  
+  ngOnInit() {
     
   }
-  ngOnInit() {
-  }
-
 }
+
+
+[
+{
+  name:'',
+  comment:''
+
+},
+{
+  name:'',
+  comment:''
+}
+
+]
