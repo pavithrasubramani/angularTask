@@ -9,9 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { TicketlistComponent } from './ticketlist/ticketlist.component';
 import { AuthGuard } from './auth.guard';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +24,7 @@ import { AuthGuard } from './auth.guard';
     RouterModule.forRoot([
      
      {
-       path:'login',
+       path:'',
        component:LoginComponent,       
      },
      {

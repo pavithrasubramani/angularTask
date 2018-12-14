@@ -8,32 +8,25 @@ import {Insert} from '../insert';
   styleUrls: ['./ticketlist.component.css']
 })
 export class TicketlistComponent implements OnInit {
-  private insert: Insert[]=[];
+  private insert: Insert[];
   constructor(private router: Router) { }
   onClick(name,comment){
-          debugger;
-         this.insert.push(new Insert(name,comment));
+          let a =JSON.parse(localStorage.getItem('key'));
+          a.push(new Insert(name,comment));
+         this.insert = a;
          localStorage.setItem('key',JSON.stringify(this.insert));
-         
          this.router.navigate(['/tickets'])
          }
          
   
-  ngOnInit() {
-    
+  ngOnInit() {    
+    this.insert = [];
+    let data= JSON.parse(localStorage.getItem('key'));
+    if(data === null){
+      localStorage.setItem('key',JSON.stringify([]));
+    }
   }
 }
 
 
-[
-{
-  name:'',
-  comment:''
 
-},
-{
-  name:'',
-  comment:''
-}
-
-]

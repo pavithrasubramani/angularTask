@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
- title = 'sample-a';
-}
+ title = 'sample-a'; 
+ private apiurl= 'http://localhost:8080/spring/tickets';
+ 
+ }
+ 
+
+
+

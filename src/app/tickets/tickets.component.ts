@@ -12,12 +12,16 @@ export class TicketsComponent implements OnInit {
   constructor(private router: Router) { }
 onCreate(){
   this.router.navigate(['/ticketlist'])
-
 }
   ngOnInit() {
+
     var store=localStorage.getItem('key');
-    debugger;
+    console.log(store);
     this.final=JSON.parse(store);
   }
+  logout(){
+    localStorage.removeItem('currentUser');
+  }   
+    
 
 }
